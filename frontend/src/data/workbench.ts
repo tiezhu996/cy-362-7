@@ -1,4 +1,4 @@
-import type { FeatureItem, KpiItem, OperationRecord } from "../types";
+import type { FeatureItem, KpiItem, OperationRecord, MemberLevelOverview } from "../types";
 
 export const localFeatures: FeatureItem[] = [
   {
@@ -26,8 +26,8 @@ export const localFeatures: FeatureItem[] = [
     "id": 4,
     "title": "会员积分与等级体系",
     "description": "注册会员消费积累积分，设置等级规则（如青铜/白银/黄金/钻石），不同等级享受折扣与优先拼车位权益，积分可兑换周边或抵扣费用。",
-    "status": "优化中",
-    "metric": "4 级"
+    "status": "已上线",
+    "metric": "5 级"
   },
   {
     "id": 5,
@@ -94,8 +94,8 @@ export const operationRecords: OperationRecord[] = [
     "key": "ldmurdergame-4",
     "name": "会员积分与等级体系",
     "owner": "财务组",
-    "status": "优化中",
-    "metric": "4 级",
+    "status": "已上线",
+    "metric": "5 级",
     "priority": "高"
   },
   {
@@ -107,3 +107,63 @@ export const operationRecords: OperationRecord[] = [
     "priority": "中"
   }
 ];
+
+export const localMemberLevelOverview: MemberLevelOverview = {
+  totalMembers: 2445,
+  totalMonthlySpend: 497000,
+  totalMonthlyDiscount: 74050,
+  levels: [
+    {
+      level: "bronze",
+      levelName: "青铜",
+      memberCount: 1280,
+      memberRatio: 0.5235,
+      discountRate: 0.95,
+      monthlySpend: 156000,
+      monthlyDiscount: 7800,
+    },
+    {
+      level: "silver",
+      levelName: "白银",
+      memberCount: 650,
+      memberRatio: 0.2659,
+      discountRate: 0.90,
+      monthlySpend: 128000,
+      monthlyDiscount: 12800,
+    },
+    {
+      level: "gold",
+      levelName: "黄金",
+      memberCount: 320,
+      memberRatio: 0.1309,
+      discountRate: 0.85,
+      monthlySpend: 96000,
+      monthlyDiscount: 14400,
+    },
+    {
+      level: "platinum",
+      levelName: "铂金",
+      memberCount: 150,
+      memberRatio: 0.0613,
+      discountRate: 0.80,
+      monthlySpend: 72000,
+      monthlyDiscount: 14400,
+    },
+    {
+      level: "diamond",
+      levelName: "钻石",
+      memberCount: 45,
+      memberRatio: 0.0184,
+      discountRate: 0.75,
+      monthlySpend: 45000,
+      monthlyDiscount: 11250,
+    },
+  ],
+  configs: [
+    { level: "bronze", levelName: "青铜", discountRate: 0.95 },
+    { level: "silver", levelName: "白银", discountRate: 0.90 },
+    { level: "gold", levelName: "黄金", discountRate: 0.85 },
+    { level: "platinum", levelName: "铂金", discountRate: 0.80 },
+    { level: "diamond", levelName: "钻石", discountRate: 0.75 },
+  ],
+};

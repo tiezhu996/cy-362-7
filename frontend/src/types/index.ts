@@ -22,6 +22,30 @@ export interface OperationRecord {
   priority: string;
 }
 
+export interface MemberLevel {
+  level: string;
+  levelName: string;
+  memberCount: number;
+  memberRatio: number;
+  discountRate: number;
+  monthlySpend: number;
+  monthlyDiscount: number;
+}
+
+export interface MemberLevelConfig {
+  level: string;
+  levelName: string;
+  discountRate: number;
+}
+
+export interface MemberLevelOverview {
+  totalMembers: number;
+  totalMonthlySpend: number;
+  totalMonthlyDiscount: number;
+  levels: MemberLevel[];
+  configs: MemberLevelConfig[];
+}
+
 export interface OverviewResponse {
   appName: string;
   appCode: string;
@@ -29,4 +53,5 @@ export interface OverviewResponse {
   features: FeatureItem[];
   kpis: KpiItem[];
   records: OperationRecord[];
+  memberLevel: MemberLevelOverview;
 }

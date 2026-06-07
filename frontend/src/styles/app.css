@@ -115,7 +115,9 @@ body {
   line-height: 1.65;
 }
 
-.work-panel {
+.work-panel,
+.member-level-overview,
+.member-level-config {
   margin-top: 26px;
 }
 
